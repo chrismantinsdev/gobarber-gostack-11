@@ -42,21 +42,21 @@ export default class CreateAppointments1589444797026
         ],
       }),
     );
-    await queryRunner.createForeignKey(
-      'appointments',
-      new TableForeignKey({
-        name: 'AppointmentProvider',
-        columnNames: ['provider_id'],
-        referencedColumnNames: ['id'],
-        referencedTableName: 'users',
-        onDelete: 'SET NULL',
-        onUpdate: 'CASCADE',
-      }),
-    );
+    // await queryRunner.createForeignKey(
+    //   'appointments',
+    //   new TableForeignKey({
+    //     name: 'AppointmentProvider',
+    //     columnNames: ['provider_id'],
+    //     referencedColumnNames: ['id'],
+    //     referencedTableName: 'users',
+    //     onDelete: 'SET NULL',
+    //     onUpdate: 'CASCADE',
+    //   }),
+    // );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('appoitments', 'AppointmentProvider');
+    // await queryRunner.dropForeignKey('appoitments', 'AppointmentProvider');
     await queryRunner.dropTable('appointments');
   }
 }
