@@ -21,7 +21,7 @@ const SingUp: React.FC = () => {
         <Form onSubmit={handleSubmit}>
           <h1>Faça seu cadastro</h1>
 
-          <Input name="name" icon={FiUser} placeholder="Email" />
+          <Input name="name" icon={FiUser} placeholder="Name" />
           <Input name="email" icon={FiMail} placeholder="Email" />
 
           <Input
