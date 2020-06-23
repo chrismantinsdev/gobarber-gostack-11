@@ -5,6 +5,8 @@ import SingIn from './pages/SingIn';
 
 import GlobalStyle from './styles/global';
 
+import AuthContext from './context/AuthContext';
+
 const App: React.FC = () => {
   return (
     <>
