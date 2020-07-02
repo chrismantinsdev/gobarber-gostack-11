@@ -4,7 +4,7 @@ import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
-import { useAuth } from '../../hooks/AuthContext';
+import { useAuth } from '../../hooks/auth';
 import getValidationErrors from '../../utils/getValidationErrors';
 
 import LogoImg from '../../assets/logo.svg';
@@ -35,10 +35,10 @@ const SignIn: React.FC = () => {
         await schema.validate(data, { abortEarly: false });
         signIn({ email: data.email, password: data.password });
       } catch (error) {
-        console.log('Error: ', error);
-
-        const errors = getValidationErrors(error);
-        formRef.current?.setErrors(errors);
+        if (error instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(error);
+          formRef.current?.setErrors(errors);
+        }
       }
     },
     [signIn],
