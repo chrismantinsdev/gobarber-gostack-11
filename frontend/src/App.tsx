@@ -1,21 +1,21 @@
 import React from 'react';
-
-import SingIn from './pages/SingIn';
-// import SingUp from './pages/SingUp';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import GlobalStyle from './styles/global';
 
 import AppProvider from './hooks';
 
+import Routes from './routes';
+
 const App: React.FC = () => {
   return (
-    <>
+    <Router>
       <AppProvider>
-        <SingIn />
+        <Routes />
       </AppProvider>
 
       <GlobalStyle />
-    </>
+    </Router>
   );
 };
 
