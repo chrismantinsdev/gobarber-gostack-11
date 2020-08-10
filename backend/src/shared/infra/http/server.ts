@@ -8,7 +8,8 @@ import uploadConfig from '@config/upload';
 import AppError from '@shared/errors/AppError';
 import routes from './routes';
 
-import '../database';
+import '@shared/infra/typeorm';
+import '@shared/container';
 
 const app = express();
 
